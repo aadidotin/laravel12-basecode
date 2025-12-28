@@ -13,7 +13,7 @@ return [
     | Default module namespace.
     |
     */
-    'namespace' => 'Module',
+    'namespace' => 'Modules',
 
     /*
     |--------------------------------------------------------------------------
@@ -36,6 +36,7 @@ return [
             'assets/js/app' => 'resources/assets/js/app.js',
             'assets/sass/app' => 'resources/assets/sass/app.scss',
             'vite' => 'vite.config.js',
+            'controller' => 'app/Http/Controllers/Controller.php',
             'package' => 'package.json',
         ],
         'replacements' => [
@@ -255,10 +256,10 @@ return [
     |
     */
     'composer' => [
-        'vendor' => env('MODULE_VENDOR', 'nwidart'),
+        'vendor' => env('MODULE_VENDOR', 'aadidotin'),
         'author' => [
-            'name' => env('MODULE_AUTHOR_NAME', 'Nicolas Widart'),
-            'email' => env('MODULE_AUTHOR_EMAIL', 'n.widart@gmail.com'),
+            'name' => env('MODULE_AUTHOR_NAME', 'Aditya Sharma'),
+            'email' => env('MODULE_AUTHOR_EMAIL', 'adisharma14500@gmail.com'),
         ],
         'composer-output' => false,
     ],
