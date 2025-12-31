@@ -1,18 +1,19 @@
 <?php
 
-namespace $CLASS_NAMESPACE$;
+namespace Modules\Auth\Http\Controllers;
 
 use Modules\Core\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
-class $CLASS$ extends Controller
+class AuthController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('$STUDLY_NAME$::index');
+        return Inertia::render('Auth::Index');
     }
 
     /**
@@ -20,7 +21,7 @@ class $CLASS$ extends Controller
      */
     public function create()
     {
-        return view('$STUDLY_NAME$::create');
+        return view('auth::create');
     }
 
     /**
@@ -33,7 +34,7 @@ class $CLASS$ extends Controller
      */
     public function show($id)
     {
-        return view('$STUDLY_NAME$::show');
+        return view('auth::show');
     }
 
     /**
@@ -41,7 +42,7 @@ class $CLASS$ extends Controller
      */
     public function edit($id)
     {
-        return view('$STUDLY_NAME$::edit');
+        return view('auth::edit');
     }
 
     /**
