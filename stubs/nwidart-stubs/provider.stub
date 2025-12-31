@@ -7,6 +7,11 @@ use Illuminate\Support\ServiceProvider;
 class $CLASS$ extends ServiceProvider
 {
     /**
+     * Boot the application provider.
+     */
+    public function boot(): void {}
+
+    /**
      * Register the service provider.
      */
     public function register(): void {}
@@ -14,8 +19,8 @@ class $CLASS$ extends ServiceProvider
     /**
      * Get the services provided by the provider.
      */
-    public function provides(): array
+    /* public function provides(): array
     {
         return [];
-    }
+    } */
 }
