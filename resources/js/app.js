@@ -23,5 +23,14 @@ createInertiaApp({
         createApp({ render: () => h(App, props) })
             .use(plugin)
             .mount(el)
+
+        // Dynamically load JS after Vue
+        const script = document.createElement('script');
+        script.src = '/assets/js/app.js'; // file in public/
+        // script.onload = () => {
+        //     console.log('External JS loaded after Vue!');
+        //     if (window.initCustomJS) window.initCustomJS();
+        // };
+        document.body.appendChild(script);
     },
 })

@@ -1,5 +1,6 @@
 {
     "Core": true,
     "Tenant": true,
-    "Auth": true
+    "Auth": true,
+    "UI": true
 }

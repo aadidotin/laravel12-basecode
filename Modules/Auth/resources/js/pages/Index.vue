@@ -1,12 +1,17 @@
-<script setup></script>
+<script setup>
+import PortalLayout from '@UI/layouts/PortalLayout.vue';
+
+</script>
 
 <template>
-    <div>
-        <h2>Auth</h2>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-    </div>
+    <PortalLayout>
+        <div>
+            <h2>Auth</h2>
+            <p>hello</p>
+            <p>hello</p>
+            <p>hello</p>
+        </div>
+    </PortalLayout>
 </template>
 
 <style></style>

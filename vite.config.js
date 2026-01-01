@@ -2,6 +2,8 @@ import { defineConfig } from 'vite';
 import laravel from 'laravel-vite-plugin';
 import tailwindcss from '@tailwindcss/vite';
 import vue from '@vitejs/plugin-vue'
+import path from 'path';
+import fs from 'fs';
 
 function moduleAliases() {
     const modulesPath = path.resolve(__dirname, 'Modules')
@@ -11,7 +13,7 @@ function moduleAliases() {
         aliases[`@${module}`] = path.join(
             modulesPath,
             module,
-            'Resources/js'
+            'resources/js'
         )
     })
 
@@ -25,7 +27,11 @@ export default defineConfig({
             refresh: true,
         }),
         tailwindcss(),
-        vue(),
+        vue({
+            template: {
+                transformAssetUrls: false
+            }
+        }),
     ],
     resolve: {
         alias: {
