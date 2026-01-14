@@ -2,5 +2,7 @@
     "Core": true,
     "Tenant": true,
     "Auth": true,
-    "UI": true
+    "UI": true,
+    "Saas": true,
+    "Test": true
 }

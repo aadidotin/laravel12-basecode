@@ -38,7 +38,6 @@
     <script src="{{ asset('assets/js/plugins.js') }}"></script>
 
     <!-- App js -->
-    {{-- <script async defer src="{{ asset('assets/js/app.js') }}"></script> --}}
 </body>
 
 </html>

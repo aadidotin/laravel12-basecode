@@ -1,19 +1,18 @@
 <?php
 
-namespace Modules\Auth\Http\Controllers;
+namespace Modules\Saas\Http\Controllers;
 
 use Modules\Core\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
 
-class AuthController extends Controller
+class SaasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function loginPage()
+    public function index()
     {
-        return Inertia::render('Auth::SignIn');
+        return view('Saas::index');
     }
 
     /**
@@ -21,7 +20,7 @@ class AuthController extends Controller
      */
     public function create()
     {
-        return view('auth::create');
+        return view('Saas::create');
     }
 
     /**
@@ -34,7 +33,7 @@ class AuthController extends Controller
      */
     public function show($id)
     {
-        return view('auth::show');
+        return view('Saas::show');
     }
 
     /**
@@ -42,7 +41,7 @@ class AuthController extends Controller
      */
     public function edit($id)
     {
-        return view('auth::edit');
+        return view('Saas::edit');
     }
 
     /**

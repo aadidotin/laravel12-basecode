@@ -1,13 +1,13 @@
 <?php
 
-namespace $NAMESPACE$;
+namespace Modules\Saas\Providers;
 
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
 
-class $CLASS$ extends ServiceProvider
+class RouteServiceProvider extends ServiceProvider
 {
-    protected string $name = '$MODULE$';
+    protected string $name = 'Saas';
 
     /**
      * Called before routes are registered.
@@ -35,7 +35,7 @@ class $CLASS$ extends ServiceProvider
      */
     protected function mapWebRoutes(): void
     {
-        Route::middleware(['web', 'tenant'])->group(module_path($this->name, '$WEB_ROUTES_PATH$'));
+        Route::middleware('web')->group(module_path($this->name, '/routes/web.php'));
     }
 
     /**
@@ -45,6 +45,6 @@ class $CLASS$ extends ServiceProvider
      */
     protected function mapApiRoutes(): void
     {
-        Route::middleware(['api', 'tenant'])->prefix('api')->name('api.')->group(module_path($this->name, '$API_ROUTES_PATH$'));
+        Route::middleware('api')->prefix('api')->name('api.')->group(module_path($this->name, '/routes/api.php'));
     }
 }

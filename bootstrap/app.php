@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         //
         $middleware->appendToGroup('tenant', [
-            \Stancl\Tenancy\Middleware\InitializeTenancyByDomain::class,
+            \Stancl\Tenancy\Middleware\InitializeTenancyByDomainOrSubdomain::class,
             \Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains::class,
         ]);
     })

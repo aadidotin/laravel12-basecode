@@ -16,16 +16,6 @@ class TenantProvisioner
             'domains' => [$domain],
         ]);
 
-        // Provision database
-        $this->provisionDatabase($tenant);
-
         return $tenant;
-    }
-
-    protected function provisionDatabase(Tenant $tenant): void
-    {
-        $tenant->run(function () {
-            Artisan::call('migrate', ['--force' => true]);
-        });
     }
 }
