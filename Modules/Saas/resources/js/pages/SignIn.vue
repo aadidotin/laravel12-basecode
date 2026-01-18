@@ -1,4 +1,22 @@
 <script setup>
+import { useForm } from '@inertiajs/vue3';
+import { route } from 'ziggy-js'
+import { ref } from 'vue';
+
+const showPassword = ref(false);
+
+const form = useForm({
+    email: '',
+    password: '',
+    remember: false,
+});
+
+const submit = () => {
+    form.post(route('saas._login'), {
+        onFinish: () => form.reset('password'),
+    });
+};
+
 </script>
 
 <template>
@@ -25,7 +43,7 @@
                 <div
                     className="col-xxl-4 col-xl-5 col-lg-5 col-md-8 col-12 d-flex flex-column align-self-center ms-lg-auto me-lg-0 mx-auto">
                     <div className="card">
-                        <form className="card-body">
+                        <form @submit.prevent="submit" className="card-body">
                             <div className="row">
                                 <div className="col-md-12 mb-3">
                                     <h2>Sign In</h2>
@@ -34,16 +52,20 @@
                                 <div className="col-md-12">
                                     <div className="mb-3">
                                         <label className="form-label">Email</label>
-                                        <input type="email" className="form-control" />
+                                        <input v-model="form.email" type="email" className="form-control" />
                                     </div>
                                 </div>
                                 <div className="col-12">
                                     <div className="mb-4">
                                         <label className="form-label">Password</label>
                                         <div className="position-relative">
-                                            <input type="password" className="form-control pe-5" />
-                                            <span className="btn position-absolute end-0 px-3 top-0">
-                                                <span className="mdi mdi-eye-off"></span>
+                                            <input v-model="form.password" :type="showPassword ? 'text' : 'password'"
+                                                className="form-control pe-5" />
+
+                                            <span type="button"
+                                                className="btn position-absolute end-0 px-3 top-0 shadow-none"
+                                                @click="showPassword = !showPassword">
+                                                <i :className="`mdi ${showPassword ? 'mdi-eye' : 'mdi-eye-off'}`"></i>
                                             </span>
                                         </div>
                                     </div>
@@ -52,7 +74,7 @@
                                     <div className="mb-3">
                                         <div className="form-check form-check-primary form-check-inline">
                                             <input className="form-check-input me-3" type="checkbox"
-                                                id="form-check-default" />
+                                                v-model="form.remember" id="form-check-default" />
                                             <label className="form-check-label" htmlFor="form-check-default">
                                                 Remember me
                                             </label>

@@ -4,6 +4,7 @@ namespace Modules\Saas\Http\Controllers;
 
 use Modules\Core\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class SaasController extends Controller
 {
@@ -12,7 +13,7 @@ class SaasController extends Controller
      */
     public function index()
     {
-        return view('Saas::index');
+        return Inertia::render('Saas::Dashboard');
     }
 
     /**

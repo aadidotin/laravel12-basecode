@@ -21,7 +21,6 @@ class CreateTenantsTable extends Migration
             $table->string('name');
             $table->boolean('active')->default(true);
             $table->json('data')->nullable();
-            $table->json('features')->nullable();
             $table->timestamps();
         });
     }

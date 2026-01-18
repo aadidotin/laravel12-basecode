@@ -4,5 +4,7 @@
     "Auth": true,
     "UI": true,
     "Saas": true,
-    "Test": true
+    "Test": true,
+    "Subscription": true,
+    "Billing": true
 }

@@ -4,6 +4,7 @@ namespace $CLASS_NAMESPACE$;
 
 use Modules\Core\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class $CLASS$ extends Controller
 {
@@ -12,7 +13,7 @@ class $CLASS$ extends Controller
      */
     public function index()
     {
-        return view('$STUDLY_NAME$::index');
+        return Inertia::render('$STUDLY_NAME$::index');
     }
 
     /**
@@ -20,7 +21,7 @@ class $CLASS$ extends Controller
      */
     public function create()
     {
-        return view('$STUDLY_NAME$::create');
+        return Inertia::render('$STUDLY_NAME$::create');
     }
 
     /**
@@ -33,7 +34,7 @@ class $CLASS$ extends Controller
      */
     public function show($id)
     {
-        return view('$STUDLY_NAME$::show');
+        return Inertia::render('$STUDLY_NAME$::show');
     }
 
     /**
@@ -41,7 +42,7 @@ class $CLASS$ extends Controller
      */
     public function edit($id)
     {
-        return view('$STUDLY_NAME$::edit');
+        return Inertia::render('$STUDLY_NAME$::edit');
     }
 
     /**

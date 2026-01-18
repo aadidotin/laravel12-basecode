@@ -9,6 +9,9 @@ use Illuminate\Notifications\Notifiable;
 
 class Admin extends Authenticatable
 {
+    // Table Name
+    protected $table = "users";
+    
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
