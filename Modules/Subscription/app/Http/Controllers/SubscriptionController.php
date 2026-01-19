@@ -4,6 +4,7 @@ namespace Modules\Subscription\Http\Controllers;
 
 use Modules\Core\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class SubscriptionController extends Controller
 {
@@ -12,7 +13,7 @@ class SubscriptionController extends Controller
      */
     public function index()
     {
-        return view('Subscription::index');
+        return Inertia::render('Subscription::Index');
     }
 
     /**
@@ -20,7 +21,7 @@ class SubscriptionController extends Controller
      */
     public function create()
     {
-        return view('Subscription::create');
+        return Inertia::render('Subscription::Create');
     }
 
     /**
@@ -33,7 +34,7 @@ class SubscriptionController extends Controller
      */
     public function show($id)
     {
-        return view('Subscription::show');
+        return Inertia::render('Subscription::show');
     }
 
     /**
@@ -41,7 +42,7 @@ class SubscriptionController extends Controller
      */
     public function edit($id)
     {
-        return view('Subscription::edit');
+        return Inertia::render('Subscription::edit');
     }
 
     /**

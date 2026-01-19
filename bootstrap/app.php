@@ -21,9 +21,17 @@ return Application::configure(basePath: dirname(__DIR__))
 
         // 1. Where to send GUESTS (Unauthenticated) -> Login Page
         $middleware->redirectGuestsTo(function (Request $request) {
-            if ($request->is('saas*')) {
+            // 1. Load your allowed Central Domains from config
+            // (Standard behavior in stancl/tenancy)
+            $centralDomains = config('tenancy.central_domains', []);
+
+            // 2. Check if the current Host is in that list
+            if (in_array($request->getHost(), $centralDomains)) {
+                // You are on the Central Domain (Admin side) -> Go to SaaS Login
                 return route('saas.login');
             }
+
+            // 3. Otherwise, you must be on a Tenant Subdomain -> Go to Tenant Login
             return route('login');
         });
 

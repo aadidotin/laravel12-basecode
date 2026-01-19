@@ -16,9 +16,9 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->decimal('price', 10, 2)->default(0.00);
+            $table->decimal('monthly_price', 10, 2)->default(0.00);
             $table->string('currency', 3)->default('INR');
-            $table->string('invoice_interval')->default('month'); // month, year
+            $table->decimal('yearly_discount', 3, 2)->default(0.00)->comment('Discount amount for yearly subscriptions');
             $table->integer('trial_period_days')->default(30);
             $table->boolean('is_active')->default(true);
             $table->timestamps();

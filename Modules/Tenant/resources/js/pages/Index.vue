@@ -4,9 +4,7 @@ import PortalLayout from "@UI/layouts/PortalLayout.vue";
 
 <template>
     <PortalLayout>
-        <div>
-            <h2>Subscription</h2>
-        </div>
+        <h1>Tenants Listing</h1>
     </PortalLayout>
 </template>
 

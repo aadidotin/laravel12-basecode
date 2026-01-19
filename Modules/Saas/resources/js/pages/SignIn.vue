@@ -84,8 +84,8 @@ const submit = () => {
 
                                 <div className="col-12">
                                     <div className="mb-4">
-                                        <button className="btn btn-primary w-100">
-                                            SIGN IN
+                                        <button :disabled="form.processing" className="btn btn-primary w-100">
+                                            {{ form.processing ? 'Please wait...' : 'Sign In' }}
                                         </button>
                                     </div>
                                 </div>

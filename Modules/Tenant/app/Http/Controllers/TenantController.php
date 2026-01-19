@@ -4,6 +4,7 @@ namespace Modules\Tenant\Http\Controllers;
 
 use Modules\Core\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Inertia\Inertia;
 
 class TenantController extends Controller
 {
@@ -12,7 +13,7 @@ class TenantController extends Controller
      */
     public function index()
     {
-        return view('tenant::index');
+        return Inertia::render('Tenant::Index');
     }
 
     /**
